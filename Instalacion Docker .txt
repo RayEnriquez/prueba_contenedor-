@@ -1,0 +1,26 @@
+Instalación de Docker 
+
+Paso 1: Actualización del sistema
+sudo apt-get update
+sudo apt-get upgrade
+
+Paso 2: Instalación de las dependencias necesarias
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+Paso 3: Agregar la clave GPG oficial de Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+
+Paso 4: Agregar el repositorio de Docker
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+Paso 5: Actualización de las fuentes de APT
+sudo apt-get update
+
+
+Paso 6: Instalación de Docker
+sudo apt-get install docker-ce
+
+Paso 7: Verificar la instalación de Docker.
+sudo systemctl status docker
